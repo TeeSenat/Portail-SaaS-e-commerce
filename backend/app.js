@@ -7,8 +7,10 @@ const userRoutes = require("./routes/userRoutes");
 const productRoutes = require("./routes/productRoutes");
 const cartRoutes = require("./routes/cartRoutes");
 const orderRoutes = require("./routes/orderRoutes");
+const path = require("path");
 
-const app = express();
+const app = express(); 
+app.use(express.static(path.join(__dirname, "../frontend")));
 
 app.use(cors());
 app.use(bodyParser.json());
@@ -20,7 +22,7 @@ app.use("/api/cart", cartRoutes);
 app.use("/api/orders", orderRoutes);
 
 app.get("/", (req, res) => {
-  res.send("API e-commerce multi-tenant fonctionne");
+  res.sendFile(path.join(__dirname, "../frontend/pages/index.html"));
 });
 
 app.listen(3000, () => {

@@ -1,18 +1,54 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" href="../css/style.css">
+  <title> TeeS Hub Portail E-commerce</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-<div class="container">
-<h2>TeeS Hub E-Commerce </h2>
+<header>
+  <div class="logo">TeeS Hub</div>
+  <nav>
+    <a href="pages/createTenant.html">Créer Boutique</a>
+    <a href="pages/products.html">Produits</a>
+    <a href="pages/cart.html">Panier</a>
+  </nav>
+</header>
 
-<a href="createTenant.html">Créer Boutique</a><br><br>
-<a href="products.html">Produits</a><br><br>
-<a href="cart.html">Panier</a>
+<section class="hero">
+  <h1>Créez votre boutique en ligne en un seul clic</h1>
+  <p>Une plateforme multi-tenant simple, rapide et performante pour gérer vos ventes.</p>
+  <a href="pages/createTenant.html" class="btn-primary">Commencer maintenant</a>
+</section>
 
-</div>
+<span id="Welcome"></span>
+<a href="pages/auth.html" id="authLink">Connexion</a>
+<a href="#" onclick="logout()" id="logoutLink" style="display:none;">Logout</a>
+
+<footer>
+  <p>© 2026 TeeS Hub Portail E-commerce</p>
+</footer>
+<script src="js/product.js"></script>
+
+<script>
+const user = JSON.parse(localStorage.getItem("user"));
+
+if (user) {
+  const welcome = document.getElementById("welcome");
+  const authLink = document.getElementById("authLink");
+  const logoutLink = document.getElementById("logoutLink");
+
+  if (welcome) welcome.innerText = "Bienvenue, " + user.name;
+  if (authLink) authLink.style.display = "none";
+  if (logoutLink) logoutLink.style.display = "inline";
+}
+
+function logout() {
+  localStorage.removeItem("user");
+  window.location.reload();
+}
+</script>
+
 
 </body>
 </html>

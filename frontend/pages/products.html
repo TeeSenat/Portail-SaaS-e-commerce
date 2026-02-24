@@ -1,20 +1,21 @@
-<div class="container">
-<h3>Ajouter Produit</h3>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Nos Produits</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
 
-<input id="tenant_id" placeholder="Tenant ID">
-<input id="name" placeholder="Nom produit">
-<input id="price" placeholder="Prix">
-<input id="stock" placeholder="Stock">
+<header class="shop-header">
+  <h1> Nos Produits</h1>
+  <a href="/">Accueil</a>
+</header>
 
-<button onclick="addProduct()">Ajouter</button>
-
-<hr>
-
-<h3>Voir Produits</h3>
-<input id="tenantSearch" placeholder="Tenant ID">
-<button onclick="loadProducts()">Afficher</button>
-
-<ul id="list"></ul>
-
-<script src="../js/product.js"></script>
+<div class="products-container" id="productsContainer">
+  
 </div>
+
+<script src="../js/products.js"></script>
+
+</body>
+</html>

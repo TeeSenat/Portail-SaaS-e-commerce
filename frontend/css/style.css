@@ -1,30 +1,489 @@
-body{
-  font-family: Arial;
-  background:#f2f2f2;
-  padding:20px;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
 }
 
-.container{
-  background:white;
-  padding:20px;
-  max-width:600px;
-  margin:auto;
-  border-radius:8px;
+body {
+  background: linear-gradient(135deg, #1e6572, #2a5298);
+  color: white;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
-input,button{
-  width:100%;
-  padding:10px;
-  margin:5px 0;
+/* HEADER */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background: rgba(0,0,0,0.2);
 }
 
-button{
-  background:#007bff;
-  color:white;
-  border:none;
-  cursor:pointer;
+.logo {
+  font-size: 20px;
+  font-weight: bold;
 }
 
-button:hover{
-  background:#0056b3;
+nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 20px;
+  font-weight: 500;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* HERO */
+.hero {
+  flex: 1;
+  text-align: center;
+  padding: 100px 20px;
+}
+
+.hero h1 {
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+.btn-primary {
+  background: #ff9800;
+  padding: 12px 25px;
+  border-radius: 5px;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.btn-primary:hover {
+  background: #96e600;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 15px;
+  background: rgba(0,0,0,0.2);
+}
+
+.auth-container {
+  width: 350px;
+  margin: 100px auto;
+  background: white;
+  color: black;
+  padding: 30px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.auth-container input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+.auth-container button {
+  width: 100%;
+  padding: 10px;
+  background: #2a5298;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.auth-container button:hover {
+  background: #1e3c72;
+}
+/* Header simple */
+.simple-header {
+  padding: 15px 30px;
+}
+
+.simple-header a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* Centrage */
+.card-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 85vh;
+}
+
+/* Carte */
+.card {
+  background: white;
+  color: #333;
+  padding: 40px;
+  width: 400px;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  text-align: center;
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+.card h2 {
+  margin-bottom: 10px;
+}
+
+.card p {
+  margin-bottom: 20px;
+  font-size: 14px;
+  color: #666;
+}
+
+.card input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.card button {
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(135deg, #1e3c72, #2a5298);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.card button:hover {
+  opacity: 0.9;
+  transform: scale(1.03);
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+/* Header */
+.shop-header {
+  background: #131921;
+  color: white;
+  padding: 15px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.shop-header a {
+  color: #f0c14b;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* Container produits */
+.products-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+  padding: 40px;
+  background: #f3f3f3;
+}
+
+/* Carte produit */
+.product-card {
+  background: white;
+  padding: 15px;
+  border-radius: 8px;
+  transition: 0.3s;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.product-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
+
+.product-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: contain;
+}
+
+.product-title {
+  font-size: 14px;
+  margin: 10px 0;
+  height: 40px;
+  overflow: hidden;
+}
+
+.product-price {
+  font-size: 18px;
+  font-weight: bold;
+  color: #B12704;
+  margin: 5px 0;
+}
+
+.product-rating {
+  color: #f0c14b;
+  font-size: 14px;
+}
+
+.product-card button {
+  margin-top: 10px;
+  width: 100%;
+  padding: 8px;
+  background: #f0c14b;
+  border: 1px solid #a88734;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.product-card button:hover {
+  background: #ddb347;
+}
+/* Layout panier */
+.cart-container {
+  display: flex;
+  gap: 30px;
+  padding: 40px;
+  background: #f3f3f3;
+}
+
+/* Liste produits */
+.cart-items {
+  flex: 2;
+}
+
+/* Carte produit panier */
+.cart-item {
+  display: flex;
+  background: white;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  align-items: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.cart-item img {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  margin-right: 20px;
+}
+
+.cart-info {
+  flex: 1;
+}
+
+.cart-info h4 {
+  margin-bottom: 5px;
+}
+
+.cart-price {
+  font-weight: bold;
+  color: #B12704;
+}
+
+/* Quantité */
+.cart-qty {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.cart-qty button {
+  padding: 5px 10px;
+  background: #f0c14b;
+  border: 1px solid #a88734;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+/* Résumé */
+.cart-summary {
+  flex: 1;
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  height: fit-content;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.cart-summary button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 15px;
+  background: #ffd814;
+  border: 1px solid #fcd200;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.cart-summary button:hover {
+  background: #f7ca00;
+}
+
+
+/* Carte bancaire animée */
+.card-preview {
+  width: 100%;
+  height: 200px;
+  perspective: 1000px;
+  margin-bottom: 25px;
+  position: relative;
+}
+
+.card-front, .card-back {
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  color: white;
+  padding: 20px;
+  position: absolute;
+  backface-visibility: hidden;
+  transition: transform 0.6s ease;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+}
+
+.card-front {
+  background: linear-gradient(135deg, #111827, #1f2937);
+}
+
+.card-back {
+  background: linear-gradient(135deg, #1f2937, #111827);
+  transform: rotateY(180deg);
+}
+
+.card-preview.flip .card-front {
+  transform: rotateY(180deg);
+}
+
+.card-preview.flip .card-back {
+  transform: rotateY(360deg);
+}
+
+.card-chip {
+  width: 50px;
+  height: 35px;
+  background: gold;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.card-number {
+  font-size: 18px;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+}
+
+.card-name, .card-expiry {
+  font-size: 14px;
+}
+
+.card-strip {
+  height: 40px;
+  background: black;
+  margin-bottom: 20px;
+}
+
+.card-cvv {
+  background: white;
+  color: black;
+  padding: 5px;
+  width: 60px;
+  text-align: center;
+}
+
+/* Animation succès */
+.success-animation {
+  text-align: center;
+  animation: pop 0.6s ease;
+}
+
+.success-animation h2 {
+  color: green;
+}
+
+@keyframes pop {
+  0% { transform: scale(0.7); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+/* Checkout Layout */
+.checkout-container {
+  display: flex;
+  gap: 40px;
+  padding: 40px;
+  background: #f3f4f6;
+}
+
+/* Form */
+.checkout-form {
+  flex: 2;
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.checkout-form h2,
+.checkout-form h3 {
+  margin-bottom: 15px;
+}
+
+.checkout-form input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.card-row {
+  display: flex;
+  gap: 15px;
+}
+
+.checkout-form button {
+  width: 100%;
+  padding: 12px;
+  background: #111827;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.checkout-form button:hover {
+  background: #1f2937;
+}
+
+/* Summary */
+.checkout-summary {
+  flex: 1;
+  background: white;
+  padding: 25px;
+  border-radius: 10px;
+  height: fit-content;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.checkout-summary hr {
+  margin: 20px 0;
+}
+
+.checkout-summary h2 {
+  color: #B12704;
 }

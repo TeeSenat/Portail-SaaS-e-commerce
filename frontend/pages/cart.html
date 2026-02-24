@@ -1,10 +1,29 @@
-<div class="container">
-<h3>Panier</h3>
-<button onclick="loadCart()">Voir Panier</button>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Mon Panier</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
 
-<ul id="cartList"></ul>
+<header class="shop-header">
+  <h1>🛒 Mon Panier</h1>
+  <a href="/pages/products.html">Continuer mes achats</a>
+</header>
 
-<a href="checkout.html">Payer</a>
+<div class="cart-container">
+  <div class="cart-items" id="cartItems">
+    <!-- Produits injectés ici -->
+  </div>
+
+  <div class="cart-summary">
+    <h3>Résumé</h3>
+    <p>Total :</p>
+    <h2 id="cartTotal">$0</h2>
+    <button onclick="checkout()">Passer commande</button>
+  </div>
+</div>
 
 <script src="../js/cart.js"></script>
-</div>
+</body>
+</html>

@@ -1,14 +1,62 @@
-<div class="container">
-<h3>Paiement</h3>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Paiement</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
 
-<input id="total" placeholder="Montant">
-<select id="method">
-<option>WALLET</option>
-<option>CREDIT_CARD</option>
-<option>DEBIT_CARD</option>
-</select>
+<header class="shop-header">
+  <h1>Paiement sécurisé</h1>
+  <a href="/pages/cart.html">← Retour au panier</a>
+</header>
 
-<button onclick="pay()">Payer</button>
+<div class="checkout-container">
+
+  
+  <div class="checkout-form">
+    <div class="card-preview">
+  <div class="card-front" id="cardFront">
+    <div class="card-chip"></div>
+    <div class="card-number" id="previewNumber">•••• •••• •••• ••••</div>
+    <div class="card-name" id="previewName">Nom Complet</div>
+    <div class="card-expiry" id="previewExpiry">MM/AA</div>
+  </div>
+
+  <div class="card-back" id="cardBack">
+    <div class="card-strip"></div>
+    <div class="card-cvv" id="previewCvv">•••</div>
+  </div>
+</div>
+    <h2>Informations de paiement</h2>
+
+    <input type="text" id="fullname" placeholder="Nom complet">
+    <input type="email" id="email" placeholder="Adresse email">
+    <input type="text" id="address" placeholder="Adresse de livraison">
+
+    <h3>Détails de la carte</h3>
+    <input type="text" id="cardNumber" placeholder="Numéro de carte">
+    
+    <div class="card-row">
+      <input type="text" id="expiry" placeholder="MM/AA">
+      <input type="text" id="cvv" placeholder="CVV">
+    </div>
+
+    <button onclick="processPayment()">Payer maintenant</button>
+
+    <p id="paymentMessage"></p>
+  </div>
+
+ 
+  <div class="checkout-summary">
+    <h3>Résumé de commande</h3>
+    <div id="orderItems"></div>
+    <hr>
+    <h2>Total : <span id="checkoutTotal">$0</span></h2>
+  </div>
+
+</div>
 
 <script src="../js/checkout.js"></script>
-</div>
+</body>
+</html>

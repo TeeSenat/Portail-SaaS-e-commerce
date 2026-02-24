@@ -1,0 +1,28 @@
+<<!DOCTYPE html>
+<html>
+<head>
+  <title>Authentification</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<div class="auth-container">
+  <h2 id="form-title">Connexion</h2>
+
+  <input type="text" id="name" placeholder="Nom" style="display:none;">
+  <input type="email" id="email" placeholder="Email">
+  <input type="password" id="password" placeholder="Mot de passe">
+
+  <button onclick="submitForm()">Se connecter</button>
+
+  <p onclick="toggleForm()" style="cursor:pointer; color:blue; margin-top:15px;">
+    Pas de compte ? S'inscrire
+  </p>
+
+  <p id="message"></p>
+</div>
+
+<script src="../js/auth.js"></script>
+
+</body>
+</html>
